@@ -10,14 +10,20 @@ dotenv.config();
 
 const app = express();
 
-app.use(helmet());
+// Configurações de segurança
+app.use(
+    "/vendor/fontawesome",
+    express.static(
+        path.join(__dirname, "../node_modules/@fortawesome/fontawesome-free")
+    )
+);
+
+// Permite receber JSON e dados de formulários
 app.use(express.json({ limit: "1mb" }));
 app.use(express.urlencoded({ extended: true }));
 
-// Disponibiliza o HTML durante o desenvolvimento local
-if (process.env.NODE_ENV !== "production") {
-    app.use(express.static(path.join(__dirname, "../public")));
-}
+// Disponibiliza os arquivos da pasta public
+app.use(express.static(path.join(__dirname, "../public")));
 
 // Página inicial
 app.get("/", (req, res) => {

@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="https://kit.fontawesome.com/6621c552df.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="/public/css/auth.css">
+    <link rel="stylesheet" href="/css/auth.css">
+    <link rel="stylesheet" href="/vendor/fontawesome/css/all.min.css">
     <title>Login</title>
 </head>
 <body>
@@ -15,8 +15,87 @@
         </section>
 
         <section class="banner">
-            <h1>teste</h1>
+            <div class="etapa ativa" id="etapa1">
+                <div class="formulario">
+                    <h1>LOGIN</h1>
+                    <p>Seja bem-vindo(a)!</p>
+                    
+                        <form id="acessar">
+
+                            <h3>Faça login para acessar o sistema</h3>
+
+                            <div class="campos-form">
+                                <label for="usuario"><i class="fa-solid fa-user"></i></label>
+                                <input type="text" id="usuario" name="usuario" required placeholder="Nome de Usuário">
+                            </div>
+
+                            <div class="campos-form">
+                                <label for="senha"><i class="fa-solid fa-lock"></i></label>
+                                <input type="password" id="senha" name="senha" required placeholder="Informe sua Senha">
+                            </div>
+
+                            <button>LOGIN</button>
+                            
+
+                            <div class="interacoes-form">
+                                <button type="button" id="btnCriarConta">
+    <i class="fa-solid fa-user-plus"></i>
+    <strong> Criar conta</strong>
+</button>
+                                <a href="#"> <i class="fa-solid fa-unlock"></i> Esqueci a senha</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>    
+            </div>
+
+            <div class="etapa" id="etapa2" hidden>
+                <div class="formulario">
+                    <h1>REGISTRAR-SE</h1>
+                    <p>Preencha as informações</p>
+                    
+                        <form id="registrar">
+
+                            <h3>Informe os seus dados</h3>
+
+                            <div class="campos-form">
+                                <label for="emailUsuario"><i class="fa-solid fa-at"></i></label>
+                                <input type="email" id="emailUsuario" name="emailUsuario" required placeholder="seuemail@email.com">
+                            </div>
+
+                            <div class="campos-form">
+                                <label for="nomeUsuario"><i class="fa-solid fa-user"></i></label>
+                                <input type="text" id="nomeUsuario" name="nomeUsuario" required placeholder="Nome de Usuário">
+                            </div>
+
+                            <div class="campos-form">
+                                <label for="senhaUsuario"><i class="fa-solid fa-key"></i></label>
+                                <input type="password" id="senhaUsuario" name="senhaUsuario" required placeholder="Informe sua Senha">
+                            </div>
+
+                            <div class="campos-form">
+                                <label for="validacaoSenhaUsuario"><i class="fa-solid fa-unlock-keyhole"></i></label>
+                                <input type="password" id="validacaoSenhaUsuario" name="validacaoSenhaUsuario" required placeholder="Repita sua Senha">
+                            </div>
+
+                            <button>REGISTRAR</button>
+                            
+
+                            <div class="interacoes-form">
+                                <button type="button" id="btnVoltarLogin">
+    <i class="fa-solid fa-user-lock"></i>
+    <strong> Login</strong>
+</button>
+                                <a href="#"> <i class="fa-solid fa-unlock"></i> Esqueci a senha</a>
+                            </div>
+                        </form>
+                </div>
+            </div>        
         </section>
     </main>
+    <footer>
+        <h2>RM @ 2026</h2>
+    </footer>
+    <script src="/js/login.js"></script>
 </body>
 </html>
